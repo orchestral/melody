@@ -71,9 +71,6 @@ class Melody_Themes_Controller extends Controller {
 
 		// Trigger a shutdown.
 		Hybrid\Memory::shutdown();
-
-		
-		dd($memory);
 		
 		$m = Orchestra\Messages::make('success', __('melody::response.theme_updated', array(
 			'type' => Str::title($type),
