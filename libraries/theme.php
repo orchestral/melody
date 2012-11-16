@@ -44,6 +44,10 @@ class Theme {
 	{
 		if (empty($folders))
 		{
+			// If the folder is not available, the application doesn't have
+			// any theme installed or configured yet.
+			if ( ! is_dir(path('public').'themes'.DS)) return array();
+
 			$items = new fIterator(path('public').'themes'.DS, fIterator::SKIP_DOTS);
 
 			foreach ($items as $item)
