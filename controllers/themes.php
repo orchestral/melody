@@ -14,6 +14,8 @@ class Melody_Themes_Controller extends Controller {
 	 */
 	public function get_index()
 	{
+		View::share('_title_', 'Themes Manager');
+		
 		return View::make('melody::themes.home');
 	}
 
@@ -31,6 +33,8 @@ class Melody_Themes_Controller extends Controller {
 		$themes        = Melody\Theme::detect();
 		$type          = 'frontend';
 
+		View::share('_title_', 'Frontend Themes Manager');
+
 		return View::make('melody::themes.themes', compact('current_theme', 'type', 'themes'));
 	}
 
@@ -47,6 +51,8 @@ class Melody_Themes_Controller extends Controller {
 		$current_theme = Orchestra::memory()->get('site.theme.backend');
 		$themes        = Melody\Theme::detect();
 		$type          = 'backend';
+
+		View::share('_title_', 'Backend Themes Manager');
 
 		return View::make('melody::themes.themes', compact('current_theme', 'type', 'themes'));
 	}
