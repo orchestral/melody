@@ -1,4 +1,4 @@
-@include(theme_path('melody::widgets.menu'))
+@include(locate('melody::widgets.menu'))
 
 <div class="container">
 	<div class="row">
@@ -22,7 +22,7 @@
 
 		@empty
 
-		@include(theme_path('melody::helps.getting-started'))
+		@include(locate('melody::helps.getting-started'))
 
 		@endforelse
 

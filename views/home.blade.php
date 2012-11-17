@@ -1,4 +1,4 @@
-@include(theme_path('melody::widgets.menu'))
+@include(locate('melody::widgets.menu'))
 
 <div class="hero-unit">
 	<div class="page-header">

@@ -16,7 +16,7 @@ class Melody_Themes_Controller extends Controller {
 	{
 		View::share('_title_', 'Themes Manager');
 		
-		return View::make('melody::themes.home');
+		return View::make('melody::home');
 	}
 
 	/**
@@ -35,7 +35,7 @@ class Melody_Themes_Controller extends Controller {
 
 		View::share('_title_', 'Frontend Themes Manager');
 
-		return View::make('melody::themes.themes', compact('current_theme', 'type', 'themes'));
+		return View::make('melody::themes.list', compact('current_theme', 'type', 'themes'));
 	}
 
 	/**
@@ -54,7 +54,7 @@ class Melody_Themes_Controller extends Controller {
 
 		View::share('_title_', 'Backend Themes Manager');
 
-		return View::make('melody::themes.themes', compact('current_theme', 'type', 'themes'));
+		return View::make('melody::themes.list', compact('current_theme', 'type', 'themes'));
 	}
 
 	/**
