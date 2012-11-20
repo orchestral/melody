@@ -13,17 +13,18 @@ Melody can be downloaded directly from Artisan using the following commands:
 
 ## Setup
 
-To start using Melody, activate the extension from Orchestra Administrator Interface.
+To start using Melody, activate the extension from Orchestra Administrator
+Interface.
 
 ## Contributors
 
-* [Mior Muhammad Zaki](http://git.io/crynobone) 
+* [Mior Muhammad Zaki](http://git.io/crynobone)
 
 ## License
 
 	The MIT License
 
-	Copyright (C) 2012 by Mior Muhammad Zaki <http://git.io/crynobone> 
+	Copyright (C) 2012 by Mior Muhammad Zaki <http://git.io/crynobone>
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal

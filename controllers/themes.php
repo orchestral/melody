@@ -1,7 +1,7 @@
 <?php
 
 class Melody_Themes_Controller extends Controller {
-	
+
 	public $restful = true;
 
 	/**
@@ -15,7 +15,7 @@ class Melody_Themes_Controller extends Controller {
 	public function get_index()
 	{
 		View::share('_title_', 'Themes Manager');
-		
+
 		return View::make('melody::home');
 	}
 
@@ -35,7 +35,11 @@ class Melody_Themes_Controller extends Controller {
 
 		View::share('_title_', 'Frontend Themes Manager');
 
-		return View::make('melody::themes.list', compact('current_theme', 'type', 'themes'));
+		return View::make('melody::themes.list', compact(
+			'current_theme',
+			'type',
+			'themes'
+		));
 	}
 
 	/**
@@ -54,7 +58,11 @@ class Melody_Themes_Controller extends Controller {
 
 		View::share('_title_', 'Backend Themes Manager');
 
-		return View::make('melody::themes.list', compact('current_theme', 'type', 'themes'));
+		return View::make('melody::themes.list', compact(
+			'current_theme',
+			'type',
+			'themes'
+		));
 	}
 
 	/**
@@ -77,7 +85,7 @@ class Melody_Themes_Controller extends Controller {
 
 		// Trigger a shutdown.
 		Hybrid\Memory::shutdown();
-		
+
 		$m = Orchestra\Messages::make('success', __('melody::response.theme_updated', array(
 			'type' => Str::title($type),
 		)));
