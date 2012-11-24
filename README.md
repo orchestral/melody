@@ -1,4 +1,4 @@
-Melody Theme Manager for Orchestra Platform Bundle
+Melody Theme Manager for Orchestra Platform
 ==============
 
 Love the Orchestra Platform? Here's a great way to manage your theme.
