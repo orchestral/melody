@@ -1,17 +1,37 @@
 <?php
 
-class ThemeTest extends PHPUnit_Framework_TestCase {
+Bundle::start('orchestra');
+
+class ThemeTest extends Orchestra\Testable\TestCase {
 	
 	/**
 	 * Setup the test environment.
 	 */
 	public function setUp()
 	{
-		Bundle::start('melody');
+		parent::setUp();
+
+		Orchestra\Extension::activate('melody');
+		Orchestra\Extension::start('melody');
 	}
 
-	public function testDetectReturnValidThemes()
+	/**
+	 * Teardown the test environment.
+	 */
+	public function tearDown()
 	{
-		
+		Orchestra\Extension::deactivate('melody');
+
+		parent::tearDown();
+	}
+
+	/**
+	 * Test example.
+	 *
+	 * @test
+	 */
+	public function testExample()
+	{
+		$this->assertTrue(true);
 	}
 }
