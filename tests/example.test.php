@@ -2,7 +2,7 @@
 
 Bundle::start('orchestra');
 
-class ThemeTest extends Orchestra\Testable\TestCase {
+class ExampleTest extends Orchestra\Testable\TestCase {
 	
 	/**
 	 * Setup the test environment.
