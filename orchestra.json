@@ -4,5 +4,6 @@
 	"author"      : "Mior Muhammad Zaki",
 	"url"         : "http://github.com/orchestral/melody",
 	"version"     : "0.1.0",
-	"config"      : {}
+	"config"      : {},
+	"require"     : {}
 }
