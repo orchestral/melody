@@ -8,8 +8,8 @@ before_install:
   - cd ~/builds
   - git clone git://github.com/laravel/laravel.git
   - mv ./orchestral/melody ./laravel/bundles/melody
-  - echo "<?php return array('orchestra' => array('auto' => true, 'handles' => 'orchestra'), 'melody');" > ./laravel/application/bundles.php
   - cd ./laravel
   - php artisan bundle:install orchestra
+  - echo "<?php return array('orchestra' => array('auto' => true, 'handles' => 'orchestra'), 'melody');" > ./laravel/application/bundles.php
 
 script: "php artisan test melody"
