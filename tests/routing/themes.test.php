@@ -40,7 +40,7 @@ class RoutingThemesTest extends Orchestra\Testable\TestCase {
 	 *
 	 * @test
 	 */
-	public function testGetIndexWithoutAUth()
+	public function testGetIndexWithoutAuth()
 	{
 		$response = $this->call('orchestra::manages@melody.themes');
 

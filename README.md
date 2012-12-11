@@ -3,6 +3,9 @@ Melody Theme Manager for Orchestra Platform
 
 Love the Orchestra Platform? Here's a great way to manage your theme.
 
+[![Build Status](https://secure.travis-ci.org/orchestral/melody.png?branch=master)](http://travis-ci.org/orchestral/melody)
+
+
 ## Installation
 
 ### Installation with Laravel Artisan
