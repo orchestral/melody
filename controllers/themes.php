@@ -2,6 +2,11 @@
 
 class Melody_Themes_Controller extends Controller {
 
+	/**
+	 * Use restful verb.
+	 * 
+	 * @var boolean
+	 */
 	public $restful = true;
 
 	/**
@@ -84,13 +89,13 @@ class Melody_Themes_Controller extends Controller {
 		$memory->put("site.theme.{$type}", $theme_id);
 
 		// Trigger a shutdown.
-		Hybrid\Memory::shutdown();
+		Orchestra\Memory::shutdown();
 
-		$m = Orchestra\Messages::make('success', __('melody::response.theme_updated', array(
+		$msg = Orchestra\Messages::make('success', __('melody::response.theme_updated', array(
 			'type' => Str::title($type),
 		)));
 
 		return Redirect::to(handles("orchestra::manages/melody.themes/{$type}"))
-				->with('message', $m->serialize());
+				->with('message', $msg->serialize());
 	}
 }
