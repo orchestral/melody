@@ -3,7 +3,7 @@
 	"description" : "The Official Theme Manager for Orchestra Platform",
 	"author"      : "Mior Muhammad Zaki",
 	"url"         : "http://github.com/orchestral/melody",
-	"version"     : "0.1.0",
+	"version"     : "0.1.1",
 	"config"      : {},
 	"require"     : {}
 }
