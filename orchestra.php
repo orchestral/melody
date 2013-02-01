@@ -9,7 +9,7 @@ Event::listen('orchestra.started: backend', function ()
 	if ($acl->can('manage-orchestra'))
 	{
 		$menu->add('melody', 'after:extensions')
-			->title('Themes')
+			->title(__('melody::title.themes')->get())
 			->link(handles('orchestra::manages/melody.themes'));
 	}
 });
