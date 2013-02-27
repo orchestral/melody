@@ -1,8 +1,8 @@
-<?php
+<?php namespace Melody\Tests\Routing;
 
-Bundle::start('orchestra');
+\Bundle::start('orchestra');
 
-class RoutingThemesTest extends Orchestra\Testable\TestCase {
+class RoutingThemesTest extends \Orchestra\Testable\TestCase {
 	
 	/**
 	 * User instance.
@@ -18,10 +18,10 @@ class RoutingThemesTest extends Orchestra\Testable\TestCase {
 	{
 		parent::setUp();
 
-		$this->user = Orchestra\Model\User::find(1);
+		$this->user = \Orchestra\Model\User::find(1);
 
-		Orchestra\Extension::activate('melody');
-		Orchestra\Extension::start('melody');
+		\Orchestra\Extension::activate('melody');
+		\Orchestra\Extension::start('melody');
 	}
 
 	/**
@@ -30,7 +30,7 @@ class RoutingThemesTest extends Orchestra\Testable\TestCase {
 	public function tearDown()
 	{
 		unset($this->user);
-		Orchestra\Extension::deactivate('melody');
+		\Orchestra\Extension::deactivate('melody');
 
 		parent::tearDown();
 	}
@@ -44,7 +44,7 @@ class RoutingThemesTest extends Orchestra\Testable\TestCase {
 	{
 		$response = $this->call('orchestra::manages@melody.themes');
 
-		$this->assertInstanceOf('Laravel\Redirect', $response);
+		$this->assertInstanceOf('\Laravel\Redirect', $response);
 		$this->assertEquals(302, $response->foundation->getStatusCode());
 		$this->assertEquals(handles('orchestra::login'), 
 			$response->foundation->headers->get('location'));
@@ -61,13 +61,13 @@ class RoutingThemesTest extends Orchestra\Testable\TestCase {
 
 		$response = $this->call('orchestra::manages@melody.themes');
 
-		$this->assertInstanceOf('Laravel\Response', $response);
+		$this->assertInstanceOf('\Laravel\Response', $response);
 		$this->assertEquals(200, $response->foundation->getStatusCode());
 		$this->assertEquals('orchestra::resources.pages', $response->content->view);
 
 		$content = $response->content->data['content'];
 
-		$this->assertInstanceOf('Laravel\Response', $content);
+		$this->assertInstanceOf('\Laravel\Response', $content);
 		$this->assertEquals('melody::home', $content->content->view);
 	}
 }
