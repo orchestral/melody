@@ -94,7 +94,8 @@ class Melody_Themes_Controller extends Controller {
 		// Trigger a shutdown.
 		Orchestra\Memory::shutdown();
 
-		$msg = Orchestra\Messages::make('success', __('melody::response.theme_updated', array(
+		$msg = Orchestra\Messages::make()
+		$msg->add('success', __('melody::response.theme_updated', array(
 			'type' => Str::title($type),
 		)));
 
