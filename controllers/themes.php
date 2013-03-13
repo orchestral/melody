@@ -91,15 +91,15 @@ class Melody_Themes_Controller extends Controller {
 		$memory = Orchestra::memory();
 		$memory->put("site.theme.{$type}", $theme_id);
 
-		// Trigger a shutdown.
+		// Trigger a shutdown to force save the change theme to database 
+		// so it would be affected in the following request.
 		Orchestra\Memory::shutdown();
 
-		$msg = Orchestra\Messages::make()
+		$msg = Orchestra\Messages::make();
 		$msg->add('success', __('melody::response.theme_updated', array(
 			'type' => Str::title($type),
 		)));
 
-		return Redirect::to(handles("orchestra::manages/melody.themes/{$type}"))
-				->with('message', $msg->serialize());
+		return Redirect::to(handles("orchestra::manages/melody.themes/{$type}"));
 	}
 }
